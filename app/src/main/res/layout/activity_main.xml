@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/description_constraint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:background="@drawable/bg_color">
+
+        <TextView
+            android:id="@+id/tv_weatherDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="N/A"
+            android:textColor="@color/black"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.05" />
+
+        <TextView
+            android:id="@+id/tv_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="N/A"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintLeft_toLeftOf="@id/tv_weatherDescription"
+            app:layout_constraintRight_toRightOf="@id/tv_weatherDescription"
+            app:layout_constraintTop_toBottomOf="@id/tv_weatherDescription" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/temperature_constraints"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:paddingLeft="10dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_location">
+
+            <TextView
+                android:id="@+id/view_HT"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="1"
+                android:text="最高"
+                android:textSize="14dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/tv_HT"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+
+            <TextView
+                android:id="@+id/tv_HT"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="N/A"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/view_HT"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/view_LT"/>
+
+            <TextView
+                android:id="@+id/view_LT"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="1"
+                android:text="最低"
+                android:textSize="14dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/tv_HT"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/tv_LT"
+                />
+
+            <TextView
+                android:id="@+id/tv_LT"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="N/A"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/view_LT"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/view_raining"
+
+                />
+
+            <TextView
+                android:id="@+id/view_raining"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="1"
+                android:text="降雨"
+                android:textSize="14dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/tv_LT"
+                app:layout_constraintRight_toLeftOf="@id/tv_rainProbability"
+                />
+
+            <TextView
+                android:id="@+id/tv_rainProbability"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="N/A"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toRightOf="@id/view_raining"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <TextView
+        android:id="@+id/view_suggestion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="建議準備："
+        android:textSize="24dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        app:layout_constraintTop_toBottomOf="@id/description_constraint"
+        app:layout_constraintLeft_toLeftOf="parent"
+
+        />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/itemPreparation_constraints"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="10dp"
+        android:background="#C9DFF1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view_suggestion"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        >
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/img_1"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/img_2"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/img_2"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:layout_constraintLeft_toRightOf="@id/img_1"
+            app:layout_constraintRight_toLeftOf="@id/img_3"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/img_3"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:layout_constraintLeft_toRightOf="@id/img_2"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/img_4"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/img_5"
+            app:layout_constraintTop_toBottomOf="@id/img_1" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/img_5"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintLeft_toRightOf="@id/img_4"
+            app:layout_constraintRight_toLeftOf="@id/img_6"
+            app:layout_constraintTop_toBottomOf="@id/img_2" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/img_6"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintLeft_toRightOf="@id/img_5"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/img_3" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/btn_search"
+        android:layout_width="243dp"
+        android:layout_height="160dp"
+        android:backgroundTint="#6688"
+        android:text="搜尋"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sp_time"
+
+        />
+
+    <Spinner
+        android:id="@+id/sp_locationName"
+        android:layout_width="150dp"
+        android:layout_height="35dp"
+        android:layout_marginLeft="20dp"
+        android:background="@drawable/border"
+        app:layout_constraintBottom_toTopOf="@id/btn_search"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/sp_time"
+        app:layout_constraintTop_toBottomOf="@+id/itemPreparation_constraints"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <Spinner
+        android:id="@+id/sp_time"
+        android:layout_width="150dp"
+        android:layout_height="35dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/border"
+        app:layout_constraintBottom_toTopOf="@id/btn_search"
+        app:layout_constraintLeft_toRightOf="@id/sp_locationName"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/itemPreparation_constraints"
+        app:layout_constraintVertical_bias="0.5" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
